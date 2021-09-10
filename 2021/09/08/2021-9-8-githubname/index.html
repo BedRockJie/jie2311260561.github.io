@@ -16,9 +16,9 @@
 <meta property="og:description" content="分支姓名更改了需要执行一下指令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-08T06:24:00.000Z">
-<meta property="article:modified_time" content="2021-09-09T18:06:42.018Z">
+<meta property="article:modified_time" content="2021-09-10T15:00:12.759Z">
 <meta property="article:author" content="BedRock_Jie">
-<meta property="article:tag" content="git github master">
+<meta property="article:tag" content="git github Tools">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="BedRock&#39;s Blog" type="application/atom+xml">
@@ -86,6 +86,14 @@
 				
 					<a class="github" target="_blank" href="https://github.com/jie2311260561/" title="github"><i class="icon-github"></i></a>
 		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/wu-kong-72-94-77" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="/2311260561" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/GG2311260561" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="https://space.bilibili.com/374377825" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 			</div>
 			
 		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=579954&auto=0&height=66"></iframe>
@@ -127,6 +135,14 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/jie2311260561/" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/wu-kong-72-94-77" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="/2311260561" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/GG2311260561" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="https://space.bilibili.com/374377825" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 				</div>
 			</nav>
@@ -176,8 +192,8 @@
       
         <!-- more -->
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch -m master allwinner</span><br><span class="line">git fetch origin</span><br><span class="line">git branch -u origin/allwinner allwinner</span><br><span class="line">git remote set-head origin -a</span><br></pre></td></tr></table></figure>
-<h1 id="新建的远程分支"><a href="#新建的远程分支" class="headerlink" title="新建的远程分支"></a>新建的远程分支</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b my-test  //在当前分支下创建my-test的本地分支分支</span><br><span class="line">git push origin my-test  //将my-test分支推送到远程</span><br><span class="line">git branch --set-upstream-to=origin/my-test //将本地分支my-test关联到远程分支my-test上   </span><br><span class="line">git branch -a //查看远程分支 </span><br><span class="line"></span><br><span class="line">git merge *** 合并某分支</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch -m master allwinner</span><br><span class="line">git fetch origin</span><br><span class="line">git branch -u origin/allwinner allwinner</span><br><span class="line">git remote set-head origin -a</span><br></pre></td></tr></table></figure>
+<h1 id="新建的远程分支"><a href="#新建的远程分支" class="headerlink" title="新建的远程分支"></a>新建的远程分支</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b my-test  //在当前分支下创建my-test的本地分支分支</span><br><span class="line">git push origin my-test  //将my-test分支推送到远程</span><br><span class="line">git branch --set-upstream-to=origin/my-test //将本地分支my-test关联到远程分支my-test上   </span><br><span class="line">git branch -a //查看远程分支 </span><br><span class="line"></span><br><span class="line">git merge *** 合并某分支</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">删除分支</span><br><span class="line">git branch -d hotfix</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
@@ -226,7 +242,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">git github master</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">git github Tools</a>
         		</li>
       		
 		</ul>
@@ -307,11 +323,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/08/2021-9-8-tongpeifu/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/09/08/2021-9-8-miamshixiaoqiye/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          用了通配符设置简单了，小有心得
+          关于上两次面试的总结
         
       </div>
     </a>
@@ -452,10 +468,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">秋招 算法 C/C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Using Vscode</a>
               </li>
              
@@ -480,10 +492,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">哪吒开发板</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Using Windows Tools</a>
               </li>
              
@@ -492,31 +500,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C Linux nezha</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">torch onnx python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">V4L2 C Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">EMB 面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C Linux nezha Key</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">log statup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C Linux nezha network Tools SSH</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,39 +508,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Linux 思考 Tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Shell cc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gcc mingw</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">window ubuntu Tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Linux Vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">哪吒 显示</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">笔试 面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">code</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">git github master</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,6 +537,58 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C/C++ 12:47</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">哪吒</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Linux  Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Shell C/C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Tools Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tools C/C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Linux C/C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C/C++ Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">log</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Linux Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">git github Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面试笔试</a>
               </li>
             
             <div class="clearfix"></div>
