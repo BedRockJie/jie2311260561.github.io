@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://jie2311260561.github.io">
   <title>2021-9-9 算法 | BedRock&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="和为S的连续正数序列三种方法，暴力、前缀和、滑动窗口 1234567891011121314151617181920&#x2F;&#x2F;前缀和方法  从当前位置向后加  如果满足条件就 遍历 这个区间    vector&lt;vector&lt;int&gt; &gt; FindContinuousSequence(int sum) &amp;#123;        vector&lt;vector&lt;int&amp;g">
+  <meta name="description" content="和为S的连续正数序列、和为S的两个数字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2021-9-9 算法">
 <meta property="og:url" content="https://jie2311260561.github.io/2021/09/09/2021-9-9-codesuanfa/index.html">
 <meta property="og:site_name" content="BedRock&#39;s Blog">
-<meta property="og:description" content="和为S的连续正数序列三种方法，暴力、前缀和、滑动窗口 1234567891011121314151617181920&#x2F;&#x2F;前缀和方法  从当前位置向后加  如果满足条件就 遍历 这个区间    vector&lt;vector&lt;int&gt; &gt; FindContinuousSequence(int sum) &amp;#123;        vector&lt;vector&lt;int&amp;g">
+<meta property="og:description" content="和为S的连续正数序列、和为S的两个数字">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-09T15:05:01.000Z">
-<meta property="article:modified_time" content="2021-09-10T15:18:30.339Z">
+<meta property="article:modified_time" content="2021-09-14T12:18:48.047Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="和为S的连续正数序列"><a href="#和为S的连续正数序列" class="headerlink" title="和为S的连续正数序列"></a>和为S的连续正数序列</h1><p>三种方法，暴力、前缀和、滑动窗口</p>
+        <!-- more -->
+
+<h1 id="和为S的连续正数序列"><a href="#和为S的连续正数序列" class="headerlink" title="和为S的连续正数序列"></a>和为S的连续正数序列</h1><p>三种方法，暴力、前缀和、滑动窗口</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前缀和方法  从当前位置向后加  如果满足条件就 遍历 这个区间</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">FindContinuousSequence</span>(<span class="keyword">int</span> sum) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="keyword">int</span> temp =  <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= sum/<span class="number">2</span> ; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j =  i; j &lt; sum ; j++)&#123;</span><br><span class="line">                temp += j;</span><br><span class="line">                <span class="keyword">if</span>(sum == temp)&#123;</span><br><span class="line">                    vector&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">                    <span class="keyword">for</span>( <span class="keyword">int</span> k = i; k &lt;= j ;k++) ans.<span class="built_in">push_back</span>(k);</span><br><span class="line">                    result.<span class="built_in">push_back</span>(ans);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(temp &gt; sum)&#123;</span><br><span class="line">                    temp = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="和为S的两个数字"><a href="#和为S的两个数字" class="headerlink" title="和为S的两个数字"></a>和为S的两个数字</h1><p>因为题目给定的是有序数列 查找两个可以使用双指针</p>
@@ -582,7 +584,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面试笔试</a>
+                <a href="javascript:void(0)" class="js-tag color1">C\C++</a>
               </li>
             
             <div class="clearfix"></div>

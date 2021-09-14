@@ -16,7 +16,7 @@
 <meta property="og:description" content="今天的算法练习">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-08T11:05:00.000Z">
-<meta property="article:modified_time" content="2021-09-10T15:18:13.331Z">
+<meta property="article:modified_time" content="2021-09-14T12:21:49.878Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
@@ -184,8 +184,7 @@
       
         <!-- more -->
 
-<p>数组中只出现一次的数字</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">FindNumsAppearOnce</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; array)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map&lt;<span class="keyword">int</span> , <span class="keyword">int</span> &gt; map;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i : array)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]) map.<span class="built_in">erase</span>(i);</span><br><span class="line">        <span class="keyword">else</span> map[i]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:map)</span><br><span class="line">        res.<span class="built_in">push_back</span>(i.first);</span><br><span class="line">    <span class="keyword">return</span> res; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">FindNumsAppearOnce</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; array)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map&lt;<span class="keyword">int</span> , <span class="keyword">int</span> &gt; map;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i : array)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]) map.<span class="built_in">erase</span>(i);</span><br><span class="line">        <span class="keyword">else</span> map[i]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:map)</span><br><span class="line">        res.<span class="built_in">push_back</span>(i.first);</span><br><span class="line">    <span class="keyword">return</span> res; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -312,11 +311,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/09/BedRock/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/09/09/2021-9-9-cplusclass/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          关于我
+          算法过程中用到的C++库
         
       </div>
     </a>
@@ -577,7 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面试笔试</a>
+                <a href="javascript:void(0)" class="js-tag color1">C\C++</a>
               </li>
             
             <div class="clearfix"></div>

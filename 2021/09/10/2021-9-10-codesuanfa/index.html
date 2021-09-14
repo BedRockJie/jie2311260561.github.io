@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://jie2311260561.github.io">
   <title>2021-9-10 算法 | BedRock&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="类型篇pair 将两个数据合并成一个组数据。 map 可以直接通过索引修改 value  string::substr(pos,n) 从pos下标开始，长度为n的子串。">
+  <meta name="description" content="字符串转整数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2021-9-10 算法">
 <meta property="og:url" content="https://jie2311260561.github.io/2021/09/10/2021-9-10-codesuanfa/index.html">
 <meta property="og:site_name" content="BedRock&#39;s Blog">
-<meta property="og:description" content="类型篇pair 将两个数据合并成一个组数据。 map 可以直接通过索引修改 value  string::substr(pos,n) 从pos下标开始，长度为n的子串。">
+<meta property="og:description" content="字符串转整数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-10T15:10:13.000Z">
-<meta property="article:modified_time" content="2021-09-10T15:18:43.287Z">
+<meta property="article:published_time" content="2021-09-10T15:05:01.000Z">
+<meta property="article:modified_time" content="2021-09-14T12:24:52.344Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
@@ -175,17 +175,17 @@
 
         
         <a href="/2021/09/10/2021-9-10-codesuanfa/" class="archive-article-date">
-  	<time datetime="2021-09-10T15:10:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-10</time>
+  	<time datetime="2021-09-10T15:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="类型篇"><a href="#类型篇" class="headerlink" title="类型篇"></a>类型篇</h1><p>pair 将两个数据合并成一个组数据。</p>
-<p>map 可以直接通过索引修改 value </p>
-<p>string::substr(pos,n) 从pos下标开始，长度为n的子串。</p>
+        <!-- more -->
 
+
+<h1 id="字符串转换成整数"><a href="#字符串转换成整数" class="headerlink" title="字符串转换成整数"></a>字符串转换成整数</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StrToInt</span><span class="params">(string str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = str.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span> ;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str[i] &gt; <span class="string">&#x27;0&#x27;</span> &amp;&amp; str[i] &lt; <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> c = (str[i] - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">                num += (c *  <span class="built_in">pow</span>(<span class="number">10</span>,j));   <span class="comment">//此次使用 次方而不是乘法</span></span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(str[i] == <span class="string">&#x27;+&#x27;</span>)&#123;</span><br><span class="line">                num = num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(str[i] == <span class="string">&#x27;-&#x27;</span>)&#123;</span><br><span class="line">                num = -num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -309,8 +309,8 @@
     </a>
   
   
-    <a href="/2021/09/10/2021-7-14-nezha%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小哪吒应该如何入门</div>
+    <a href="/2021/09/10/2021-9-11-bishi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2021-9-11 笔试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -564,7 +564,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面试笔试</a>
+                <a href="javascript:void(0)" class="js-tag color1">C\C++</a>
               </li>
             
             <div class="clearfix"></div>
