@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jie2311260561.github.io">
-  <title>编译opencv过程中注意事项 | BedRock&#39;s Blog</title>
+  <title>实习问题整理 | BedRock&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编译opencv cmake 配置的注意事项及问题">
+  <meta name="description" content="第三方库编译和一些注意问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译opencv过程中注意事项">
-<meta property="og:url" content="https://jie2311260561.github.io/2021/09/10/2021-5-28-opencv_build/index.html">
+<meta property="og:title" content="实习问题整理">
+<meta property="og:url" content="https://jie2311260561.github.io/2021/10/08/2021-10-8-qustions/index.html">
 <meta property="og:site_name" content="BedRock&#39;s Blog">
-<meta property="og:description" content="编译opencv cmake 配置的注意事项及问题">
+<meta property="og:description" content="第三方库编译和一些注意问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-09T17:56:25.061Z">
-<meta property="article:modified_time" content="2021-09-09T18:23:00.025Z">
+<meta property="og:image" content="https://z3.ax1x.com/2021/10/08/5CN1Qs.png">
+<meta property="article:published_time" content="2021-10-08T05:05:00.000Z">
+<meta property="article:modified_time" content="2021-10-10T11:33:14.176Z">
 <meta property="article:author" content="BedRock_Jie">
-<meta property="article:tag" content="Opencv">
+<meta property="article:tag" content="C&#x2F;C++ Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/10/08/5CN1Qs.png">
   
     <link rel="alternative" href="/atom.xml" title="BedRock&#39;s Blog" type="application/atom+xml">
   
@@ -70,7 +72,7 @@
 		</nav>
 
 		<nav>
-			总文章数 61
+			总文章数 63
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -173,29 +175,91 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2021-5-28-opencv_build" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2021-10-8-qustions" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      编译opencv过程中注意事项
+      实习问题整理
     </h1>
   
 
         
-        <a href="/2021/09/10/2021-5-28-opencv_build/" class="archive-article-date">
-  	<time datetime="2021-09-09T17:56:25.061Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-10</time>
+        <a href="/2021/10/08/2021-10-8-qustions/" class="archive-article-date">
+  	<time datetime="2021-10-08T05:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- more -->
-<h1 id="创建Vs工程进行编译-设定-OPENCVMODULESPATH的参数"><a href="#创建Vs工程进行编译-设定-OPENCVMODULESPATH的参数" class="headerlink" title="创建Vs工程进行编译  设定 OPENCVMODULESPATH的参数"></a>创建Vs工程进行编译  设定 OPENCVMODULESPATH的参数</h1><p>取消勾选 pytohn  和 java 的包 因为不需要<br>arm-himix200-linux-g++ -o draw_image draw_image.cpp -I ./include/ ./lib/libopencv_core.so ./lib/libopencv_imgcodecs.so ./lib/libopencv_imgproc.so</p>
-<h1 id="编译OPencv踩过的坑"><a href="#编译OPencv踩过的坑" class="headerlink" title="编译OPencv踩过的坑"></a>编译OPencv踩过的坑</h1><p> 在Windows的编译过程中国尤其需要注意</p>
+        <h1 id="FFmpeg库编译"><a href="#FFmpeg库编译" class="headerlink" title="FFmpeg库编译"></a>FFmpeg库编译</h1><p>ffmpeg库切换平台编译重新 configure 也会报错，重新解压缩源码再次编译，没有对接硬件编解码，使用软件编解码的编译指令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./configure --enable-cross-compile --prefix=./install --enable-shared --target-os=linux --arch=riscv --enable-gpl --extra-cflags=&quot;-fPIC&quot; --extra-ldflags=-Wl,-Bsymbolic --extra-libs=&quot;-lpthread -lm&quot; --cross-prefix=riscv64-unknown-linux-gnu-</span><br><span class="line"></span><br><span class="line">make -j16</span><br><span class="line"></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>安装位置在当前文件夹下 install 目录。</p>
+<h1 id="ncnn入门及部署"><a href="#ncnn入门及部署" class="headerlink" title="ncnn入门及部署"></a>ncnn入门及部署</h1><p>ncnn编译构建参考官方文档。</p>
+<h2 id="模型转换："><a href="#模型转换：" class="headerlink" title="模型转换："></a>模型转换：</h2><p>ncnn在进行不说的过程中需要将训练好的模型转换成为ncnn框架支持的可加载的模型与模型文件。此方法适用于 <strong>pytorch to ncnn</strong>模型转换~！</p>
+<p>转换之前确认服务器训练环境安装完成</p>
+<ol>
+<li>pytorch to onnx<ol>
+<li>python models/export.py –weights runs/train/exp2/weights/best.pt –img 640 –batch 1</li>
+</ol>
+</li>
+<li>onnx简化<ol>
+<li>python -m onnxsim run s/train/exp2/weights/best.onnx best-sim.onnx</li>
+</ol>
+</li>
+<li>onnx to ncnn<ol>
+<li>这里使用ncnn工具或者使用ncnn在线转换工具。</li>
+</ol>
+</li>
+</ol>
+<h2 id="模型部署"><a href="#模型部署" class="headerlink" title="模型部署"></a>模型部署</h2><ol>
+<li><p>找到之前在做训练时候做的数据集训练索引</p>
+</li>
+<li><p>```<br>train: /home/gaojies/workspace/py_yolov5/yolov5/card_data/train.txt<br>val: /home/gaojies/workspace/py_yolov5/yolov5/card_data/val.txt<br>nc: 10<br>names: [“yuyiliziqiu”, “taiyangshen”,”fengyinzuowan”,”fengyinzuozu”,</p>
+<pre><code>    &quot;fengyinyouwan&quot;,&quot;fengyinyouzu&quot;,&quot;qngyanjiujilong&quot;,
+    &quot;qngyanbailong&quot;,&quot;fengyindeerkezuodiya&quot;,&quot;aoxitiankonglong&quot;]
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 修改将训练索引加载到推理索引中。</span><br><span class="line"></span><br><span class="line"># x264库的交叉编译</span><br><span class="line"></span><br><span class="line">没有对硬件编解码，还是软件编解码的包，硬件编解码已经更新，所以这个用处不大！</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line"># 最终的编译指令</span><br><span class="line">./configure --prefix=build --host=arm-linux --enable-shared --disable-asm --cross-prefix=riscv64-unknown-linux-gnu- --sysroot=/home/gaojies/workspace/d1-tina-open/prebuilt/gcc/linux-x86/riscv/toolchain-thead-glibc/riscv64-glibc-gcc-thead_20200702/sysroot --disable-opencl</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="服务器训练环境"><a href="#服务器训练环境" class="headerlink" title="服务器训练环境"></a>服务器训练环境</h1><p>在编译服务器上安装python训练环境，因为网络和权限等问题，需要自己编译安装。</p>
+<p>编译自己的python环境的时候需要看看有没有使用系统的库，后面会缺少三个：</p>
+<ul>
+<li>SSL</li>
+<li>BZ2 </li>
+<li>LZMA </li>
+</ul>
+<p>这三个库在编译配置时需要注意有没有找到并索引到，没有需要检查SSL库，LZMA库是一个动态库，可以从系统的位置找到。</p>
+<p>这里提供一个已经构建好的Python训练环境。<code>pythonenv.tar.gz</code></p>
+<h1 id="LVGL显示框架的布局规范"><a href="#LVGL显示框架的布局规范" class="headerlink" title="LVGL显示框架的布局规范"></a>LVGL显示框架的布局规范</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5CN1Qs"><img src="https://z3.ax1x.com/2021/10/08/5CN1Qs.png" alt="5CN1Qs.png"></a></p>
+<p><a target="_blank" rel="noopener" href="http://lvgl.100ask.net/8.1/widgets/obj.html">http://lvgl.100ask.net/8.1/widgets/obj.html</a></p>
+<p>具体使用规范可以参考100ask教程。</p>
+<h1 id="LVGL版本的选择"><a href="#LVGL版本的选择" class="headerlink" title="LVGL版本的选择"></a>LVGL版本的选择</h1><p>最新版已经时8.xx, 7.xx 升级 8.xx 需要做的工作比较多，8.xx支持软件旋转屏幕，并加入了很多扩展API，如果需要有7.xx的工程，也可以使用该方法进行编译。</p>
+<p>需要包含的库为 -luapi</p>
+<p>需要解决这个库的链接问题，我在自己服务器中的依赖路径为：（来自于 openwrt 构建脚本）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-L/home/gaojies/workspace/d1-tina-open/out/d1-nezha/staging_dir/target/usr/lib -L/home/gaojies/workspace/d1-tina-open/out/d1-nezha/staging_dir/target/lib -L/home/gaojies/workspace/d1-tina-open/prebuilt/gcc/linux-x86/riscv/toolchain-thead-glibc/riscv64-glibc-gcc-thead_20200702/usr/lib -L/home/gaojies/workspace/d1-tina-open/prebuilt/gcc/linux-x86/riscv/toolchain-thead-glibc/riscv64-glibc-gcc-thead_20200702/lib</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Opencv的移植"><a href="#Opencv的移植" class="headerlink" title="Opencv的移植"></a>Opencv的移植</h1><p>论坛有帖，我尽量避免了编译出错的包的编译。</p>
+<h1 id="关于接口"><a href="#关于接口" class="headerlink" title="关于接口"></a>关于接口</h1><p>非常 <strong>通俗易懂</strong> 可直接看代码！</p>
+<p>|寄存器  | ABI | 名字 | 描述 | Saver|</p>
+<p>| —- | —– | ——| – | —— |</p>
+<p>|x0 |  zero | 硬件连线0  | - |</p>
+<p>|x1 |ra |返回地址| |Caller|</p>
+<p>|x2 |sp |栈指针|  Callee|</p>
+<p>|x3|  gp| 全局指针|  -|</p>
+<p>|x4 |tp |线程指针| -|</p>
+<p>|x5-x7| t0-t2  |临时寄存器| Caller|</p>
+<p>|x8 |s0/fp| 保存的寄存器/帧指针| Callee|</p>
+<p>|x9 |s1|  保存寄存器保存原进程中的关键数据，避免在函数调用过程中被破坏| Callee|</p>
+<p>|x10-x11|  a0-a1| 函数参数/返回值|  Caller|</p>
+<p>|x12-x17|  a2-a7  |函数参数  |Caller|</p>
+<p>|x18-x27  |s2-s11|  保存寄存器| Callee|</p>
+<p>|x28-x31|  t3-t6  |临时寄存器 |Caller|</p>
 
       
 
@@ -240,7 +304,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C/C++ Linux</a>
         		</li>
       		
 		</ul>
@@ -252,7 +316,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Vscode//" class="article-tag-list-link color2">Vscode</a>
+        			<a href="/categories/allwinner-D1//" class="article-tag-list-link color3">allwinner D1</a>
         		</li>
       		
 		</ul>
@@ -307,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://jie2311260561.github.io/2021/09/10/2021-5-28-opencv_build/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://jie2311260561.github.io/2021/10/08/2021-10-8-qustions/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +385,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/10/2021-7-09-zhuhaizufang/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/10/10/2021-5-28-opencv_build/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          珠海租房过程记录
+          编译opencv过程中注意事项
         
       </div>
     </a>
   
   
-    <a href="/2021/09/10/2021-5-27-allwinnerSDK/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">全志科技D1哪吒SDk 下载编译使用及收获</div>
+    <a href="/2021/10/03/2021-10-3-%E8%A5%BF%E5%AE%89%E7%A7%9F%E6%88%BF%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2021西安租房记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
