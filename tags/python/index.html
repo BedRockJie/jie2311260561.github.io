@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jie2311260561.github.io">
-  <title>在服务器上装codeserver | BedRock&#39;s Blog</title>
+  <title>Tag: python | BedRock&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在服务器上安装codeserver服务打代码">
-<meta property="og:type" content="article">
-<meta property="og:title" content="在服务器上装codeserver">
-<meta property="og:url" content="https://jie2311260561.github.io/2021/09/01/2021-9-1-codeserver/index.html">
+  <meta name="description" content="记录我的个人成长">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BedRock&#39;s Blog">
+<meta property="og:url" content="https://jie2311260561.github.io/tags/python/index.html">
 <meta property="og:site_name" content="BedRock&#39;s Blog">
-<meta property="og:description" content="在服务器上安装codeserver服务打代码">
+<meta property="og:description" content="记录我的个人成长">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-01T02:04:00.000Z">
-<meta property="article:modified_time" content="2021-09-10T14:58:07.631Z">
 <meta property="article:author" content="BedRock_Jie">
-<meta property="article:tag" content="Linux Vscode">
+<meta property="article:tag" content="C&#x2F;C++ 嵌入式 BedRock">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="BedRock&#39;s Blog" type="application/atom+xml">
@@ -173,206 +171,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2021-9-1-codeserver" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      在服务器上装codeserver
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/10/31/python%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-10-31T07:57:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/10/31/python%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">python版本管理</a>
     </h1>
   
 
-        
-        <a href="/2021/09/01/2021-9-1-codeserver/" class="archive-article-date">
-  	<time datetime="2021-09-01T02:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- more -->
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>个人电脑配置实在是拉跨，自动补全根本用不起来，所以就在网上寻找解决方法</p>
-<p>遂有了 这个在服务器上打代码的 codeserver</p>
-<h1 id="异同"><a href="#异同" class="headerlink" title="异同"></a>异同</h1><p>在线的 code 不能使用最新的 c/c++ 插件，但是离线安装的这个扩展总会提示更新加载，所以这个插件必须有网络连接才能安装 </p>
-<p>由于服务器没有网络，所以不能在线安装扩展，所以联系了IT部门<br>使用海哥的账号就能使用代理访问网络。<br>然后安装了扩展</p>
-<p>但是由于不是同一用户的问题，所以在自己的用户中，使用自己的环境并不能用。。。。</p>
-<p>海哥将我刚才配置出来的目录全部移动了过来</p>
-<p>但是直接替换我自己的目录 shell 打不开</p>
-<p>经过对比，不能直接使用User目录，需要其他目录要仪器拿过来（除User目录）</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/zhifubao.JPG">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.JPG">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Linux Vscode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ubuntu//" class="article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
+          
 
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://jie2311260561.github.io/2021/09/01/2021-9-1-codeserver/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/09/05/2021-9-5-allwinner%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          allwinner实习技术总结面试
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/09/01/2021-9-1-xiaomibishi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小米笔试</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -395,9 +247,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
