@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jie2311260561.github.io">
-  <title>使用百度API实现语音识别文字和文字转语音 | BedRock&#39;s Blog</title>
+  <title>韦东山嵌入式开发指南学习 | BedRock&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="详细记录百度API Python 调用语音转文字的过程">
+  <meta name="description" content="下载hormany_xr806过程中遇到的异常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用百度API实现语音识别文字和文字转语音">
-<meta property="og:url" content="https://jie2311260561.github.io/2021/09/10/Develop_record/2020-2-28-Baidu/index.html">
+<meta property="og:title" content="韦东山嵌入式开发指南学习">
+<meta property="og:url" content="https://jie2311260561.github.io/2021/12/05/Basis_knowledge/embedded_for_%E9%9F%A6%E4%B8%9C%E5%B1%B1/index.html">
 <meta property="og:site_name" content="BedRock&#39;s Blog">
-<meta property="og:description" content="详细记录百度API Python 调用语音转文字的过程">
+<meta property="og:description" content="下载hormany_xr806过程中遇到的异常">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-09T17:56:25.021Z">
-<meta property="article:modified_time" content="2021-11-04T14:32:36.594Z">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/05/oDSn0A.md.png">
+<meta property="article:published_time" content="2021-12-05T07:23:16.000Z">
+<meta property="article:modified_time" content="2021-12-05T10:29:46.462Z">
 <meta property="article:author" content="BedRock_Jie">
-<meta property="article:tag" content="API">
+<meta property="article:tag" content="knowledge">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2021/12/05/oDSn0A.md.png">
   
     <link rel="alternative" href="/atom.xml" title="BedRock&#39;s Blog" type="application/atom+xml">
   
@@ -64,13 +66,13 @@
 	        
 				<li><a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92">计划</a></li>
 	        
-				<li><a href="/2021/09/09/BedRock/">作者简介</a></li>
+				<li><a href="/2021/09/09/About/BedRock/">作者简介</a></li>
 	        
 			</ul>
 		</nav>
 
 		<nav>
-			总文章数 72
+			总文章数 74
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -158,7 +160,7 @@
 		        
 					<li style="width: 25%"><a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92">计划</a></li>
 		        
-					<li style="width: 25%"><a href="/2021/09/09/BedRock/">作者简介</a></li>
+					<li style="width: 25%"><a href="/2021/09/09/About/BedRock/">作者简介</a></li>
 		        
 				</ul>
 			</nav>
@@ -173,113 +175,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Develop_record/2020-2-28-Baidu" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Basis_knowledge/embedded_for_韦东山" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用百度API实现语音识别文字和文字转语音
+      韦东山嵌入式开发指南学习
     </h1>
   
 
         
-        <a href="/2021/09/10/Develop_record/2020-2-28-Baidu/" class="archive-article-date">
-  	<time datetime="2021-09-09T17:56:25.021Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-10</time>
+        <a href="/2021/12/05/Basis_knowledge/embedded_for_%E9%9F%A6%E4%B8%9C%E5%B1%B1/" class="archive-article-date">
+  	<time datetime="2021-12-05T07:23:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>详细记录百度API Python 调用语音转文字的过程</p>
-<span id="more"></span>
+        <!-- more -->
 
-<h1 id="1-在百度云创建一个语音产品"><a href="#1-在百度云创建一个语音产品" class="headerlink" title="1.在百度云创建一个语音产品"></a>1.在百度云创建一个语音产品</h1><p><a target="_blank" rel="noopener" href="https://console.bce.baidu.com/">百度云</a><br>在-&gt;产品-&gt;人工智能-&gt;语音技术(选择任何一个创建一个功能包)<br>也可参考<a target="_blank" rel="noopener" href="https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjgn3">百度开发者教程</a><br>创建完成之后你将在你的全局，产品服务中看到自己的语音技术<br>其中包括</p>
-<ol>
-<li>应用名称</li>
-<li>AppID</li>
-<li>API Key </li>
-<li>Secret Key</li>
-<li>还有创建时间·····<br>其中AppId、API Key、Secret Key都很关键这是，在后面接入百度API的凭证，我将在后面标注出来。</li>
-</ol>
-<h1 id="2-参考百度官方文档"><a href="#2-参考百度官方文档" class="headerlink" title="2.参考百度官方文档"></a>2.参考百度官方文档</h1><h2 id="1-语音转文字（即语音识别）的功能实现"><a href="#1-语音转文字（即语音识别）的功能实现" class="headerlink" title="1)语音转文字（即语音识别）的功能实现"></a>1)语音转文字（即语音识别）的功能实现</h2><p>首先，语音识别对音频格式及时长有一定要求，可使用开源的音频格式转换及VAD切分工具。便于进行音频处理。拼音相似度工具可以通过比较拼音相似度，解决同音字问题。<br>目前，SDK调用使用http接口，需要上传完整文件。根据接口内容：</p>
-<ol>
-<li>支持的语音格式<br>原始 PCM 的录音参数必须符合 16k 采样率、16bit 位深、单声道，支持的格式有：pcm（不压缩）、wav（不压缩，pcm编码）、amr（压缩格式）</li>
-<li>支持的语音时长上限为60s，请不要超过这个长度，否则会返回错误。</li>
-</ol>
-<h3 id="1、安装语音识别-Python-SDK"><a href="#1、安装语音识别-Python-SDK" class="headerlink" title="1、安装语音识别 Python SDK"></a>1、安装语音识别 Python SDK</h3><p>如果已安装<code>pip</code>，执行<code>pip install baidu-aip</code>即可。<br>如果已安装<code>setuptools</code>，执行<code>python setup.py install</code>即可。</p>
-<h3 id="2、使用百度接口："><a href="#2、使用百度接口：" class="headerlink" title="2、使用百度接口："></a>2、使用百度接口：</h3><p>向远程服务上传整段语音进行识别</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#文档示例代码：</span><br><span class="line"># 读取文件</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#x27;rb&#x27;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line"># 识别本地文件</span><br><span class="line">client.asr(get_file_content(&#x27;audio.pcm&#x27;), &#x27;pcm&#x27;, 16000, &#123;</span><br><span class="line">    &#x27;dev_pid&#x27;: 1536,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="参考文档参数："><a href="#参考文档参数：" class="headerlink" title="参考文档参数："></a>参考文档参数：</h4><ol>
-<li>speech    Buffer    建立包含语音内容的Buffer对象, 语音文件的格式，pcm 或者 wav 或者 amr。不区分大小写</li>
-<li>format    String    语音文件的格式，pcm 或者 wav 或者 amr。不区分大小写。推荐pcm文件</li>
-<li>rate    int    采样率，16000，固定值</li>
-<li>cuid    String    用户唯一标识，用来区分用户，填写机器 MAC 地址或 IMEI 码，长度为60以内</li>
-<li>dev_pid    Int    不填写lan参数生效，都不填写，默认1537（普通话 输入法模型），dev_pid参数见本节开头的表格<h4 id="dev-pid参数列表"><a href="#dev-pid参数列表" class="headerlink" title="dev_pid参数列表"></a>dev_pid参数列表</h4><table>
-<thead>
-<tr>
-<th align="left">dev_pid</th>
-<th align="center">语言</th>
-<th align="right">模型</th>
-<th align="right">是否有标点</th>
-<th align="right">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1536</td>
-<td align="center">普通话(支持简单的英文识别)</td>
-<td align="right">搜索模型</td>
-<td align="right">无标点</td>
-<td align="right">支持自定义词库</td>
-</tr>
-<tr>
-<td align="left">1537</td>
-<td align="center">普通话(纯中文识别)</td>
-<td align="right">输入法模型</td>
-<td align="right">有标点</td>
-<td align="right">支持自定义词库</td>
-</tr>
-<tr>
-<td align="left">1737</td>
-<td align="center">英语</td>
-<td align="right"></td>
-<td align="right">无标点</td>
-<td align="right">不支持自定义词库</td>
-</tr>
-<tr>
-<td align="left">1637</td>
-<td align="center">粤语</td>
-<td align="right"></td>
-<td align="right">有标点</td>
-<td align="right">不支持自定义词库</td>
-</tr>
-<tr>
-<td align="left">1837</td>
-<td align="center">四川话</td>
-<td align="right"></td>
-<td align="right">有标点</td>
-<td align="right">不支持自定义词库</td>
-</tr>
-<tr>
-<td align="left">1936</td>
-<td align="center">普通话远场</td>
-<td align="right">远场模型</td>
-<td align="right">有标点</td>
-<td align="right">不支持</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<p>成功返回样例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;corpus_no&quot;:&quot;6798493061260544840&quot;,&quot;err_msg&quot;:&quot;success.&quot;,</span><br><span class="line">&quot;err_no&quot;:0,</span><br><span class="line">&quot;result&quot;:[&quot;百度是瓜皮。&quot;],&quot;sn&quot;:&quot;666502245331582897515&quot;&#125;</span><br></pre></td></tr></table></figure>
-<p>错误信息参考：<br>|错误码    |用户输入/服务端|    含义    |一般解决方法|<br>|:-|:-:|-:|–:|<br>|3300|    用户输入错误|    输入参数不正确|    请仔细核对文档及参照demo，核对输入参数<br>|3301|    用户输入错误|    音频质量过差|    请上传清晰的音频<br>|3302|    用户输入错误|    鉴权失败|    token字段校验失败。请使用正确的API_KEY 和 SECRET_KEY生成。或QPS、调用量超出限额。或音频采样率不正确（可尝试更换为16k采样率）。|<br>|3303|    服务端问题|    语音服务器后端问题|    请将api返回结果反馈至论坛或者QQ群|<br>|3304|    用户请求超限|    用户的请求QPS超限|    请降低识别api请求频率 （qps以appId计算，移动端如果共用则累计）|<br>|3305|    用户请求超限|    用户的日pv（日请求量）超限|    请“申请提高配额”，如果暂未通过，请降低日请求量|<br>|3307|    服务端问题|    语音服务器后端识别出错问题|    目前请确保16000的采样率音频时长低于30s。如果仍有问题，请将api返回结果反馈至论坛或者QQ群|<br>|3308|    用户输入错误|    音频过长|    音频时长不超过60s，请将音频时长截取为60s以下|<br>|3309|    用户输入错误|    音频数据问题    |服务端无法将音频转为pcm格式，可能是长度问题，音频格式问题等。 请将输入的音频时长截取为60s以下，并核对下音频的编码，是否是16K， 16bits，单声道。|<br>|3310|    用户输入错误|    输入的音频文件过大|    语音文件共有3种输入方式： json 里的speech 参数（base64后）； 直接post 二进制数据，及callback参数里url。 分别对应三种情况：json超过10M；直接post的语音文件超过10M；callback里回调url的音频文件超过10M|<br>|3311|    用户输入错误|    采样率rate参数不在选项里|    目前rate参数仅提供16000，填写4000即会有此错误|<br>|3312|    用户输入错误|    音频格式format参数不在选项里|    目前格式仅仅支持pcm，wav或amr，如填写mp3即会有此错误|<br>一般问题均在此表格里。<br>下面贴出代码已经我的测试结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">IS_PY3 = sys.version_info.major == <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> IS_PY3:</span><br><span class="line">    <span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">    <span class="keyword">from</span> urllib.request <span class="keyword">import</span> Request</span><br><span class="line">    <span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line">    <span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">    timer = time.perf_counter</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">from</span> urllib2 <span class="keyword">import</span> urlopen</span><br><span class="line">    <span class="keyword">from</span> urllib2 <span class="keyword">import</span> Request</span><br><span class="line">    <span class="keyword">from</span> urllib2 <span class="keyword">import</span> URLError</span><br><span class="line">    <span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</span><br><span class="line">    <span class="keyword">if</span> sys.platform == <span class="string">&quot;win32&quot;</span>:</span><br><span class="line">        timer = time.clock</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># On most other platforms the best timer is time.time()</span></span><br><span class="line">        timer = time.time</span><br><span class="line"></span><br><span class="line">API_KEY = <span class="string">&#x27;Z98pRtfNVQOGheA77PdbqSli&#x27;</span></span><br><span class="line">SECRET_KEY = <span class="string">&#x27;DMKRQo8uTuSbhtb5gamaM4bMZGNrSQGG&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要识别的文件</span></span><br><span class="line">AUDIO_FILE = <span class="string">&#x27;baidu.pcm&#x27;</span>  <span class="comment"># 只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</span></span><br><span class="line"><span class="comment"># 文件格式</span></span><br><span class="line">FORMAT = AUDIO_FILE[-<span class="number">3</span>:]  <span class="comment"># 文件后缀只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</span></span><br><span class="line"></span><br><span class="line">CUID = <span class="string">&#x27;123456PYTHON&#x27;</span></span><br><span class="line"><span class="comment"># 采样率</span></span><br><span class="line">RATE = <span class="number">16000</span>  <span class="comment"># 固定值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通版</span></span><br><span class="line"></span><br><span class="line">DEV_PID = <span class="number">1537</span>  <span class="comment"># 1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。根据文档填写PID，选择语言及识别模型</span></span><br><span class="line">ASR_URL = <span class="string">&#x27;http://vop.baidu.com/server_api&#x27;</span></span><br><span class="line">SCOPE = <span class="string">&#x27;audio_voice_assistant_get&#x27;</span>  <span class="comment"># 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234</span></span><br><span class="line"><span class="comment"># DEV_PID = 8001 ;   </span></span><br><span class="line"><span class="comment"># LM_ID = 1234 ;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DEV_PID = 80001</span></span><br><span class="line"><span class="comment"># ASR_URL = &#x27;http://vop.baidu.com/pro_api&#x27;</span></span><br><span class="line"><span class="comment"># SCOPE = &#x27;brain_enhanced_asr&#x27;  # 有此scope表示有极速版能力，没有请在网页里开通极速版</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略scope检查，非常旧的应用可能没有</span></span><br><span class="line"><span class="comment"># SCOPE = False</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DemoError</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;  TOKEN start &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">TOKEN_URL = <span class="string">&#x27;http://openapi.baidu.com/oauth/2.0/token&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fetch_token</span>():</span></span><br><span class="line">    params = &#123;<span class="string">&#x27;grant_type&#x27;</span>: <span class="string">&#x27;client_credentials&#x27;</span>,</span><br><span class="line">              <span class="string">&#x27;client_id&#x27;</span>: API_KEY,</span><br><span class="line">              <span class="string">&#x27;client_secret&#x27;</span>: SECRET_KEY&#125;</span><br><span class="line">    post_data = urlencode(params)</span><br><span class="line">    <span class="keyword">if</span> (IS_PY3):</span><br><span class="line">        post_data = post_data.encode( <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    req = Request(TOKEN_URL, post_data)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = urlopen(req)</span><br><span class="line">        result_str = f.read()</span><br><span class="line">    <span class="keyword">except</span> URLError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;token http response http code : &#x27;</span> + <span class="built_in">str</span>(err.code))</span><br><span class="line">        result_str = err.read()</span><br><span class="line">    <span class="keyword">if</span> (IS_PY3):</span><br><span class="line">        result_str =  result_str.decode()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(result_str)</span><br><span class="line">    result = json.loads(result_str)</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;access_token&#x27;</span> <span class="keyword">in</span> result.keys() <span class="keyword">and</span> <span class="string">&#x27;scope&#x27;</span> <span class="keyword">in</span> result.keys()):</span><br><span class="line">        <span class="built_in">print</span>(SCOPE)</span><br><span class="line">        <span class="keyword">if</span> SCOPE <span class="keyword">and</span> (<span class="keyword">not</span> SCOPE <span class="keyword">in</span> result[<span class="string">&#x27;scope&#x27;</span>].split(<span class="string">&#x27; &#x27;</span>)):  <span class="comment"># SCOPE = False 忽略检查</span></span><br><span class="line">            <span class="keyword">raise</span> DemoError(<span class="string">&#x27;scope is not correct&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;SUCCESS WITH TOKEN: %s  EXPIRES IN SECONDS: %s&#x27;</span> % (result[<span class="string">&#x27;access_token&#x27;</span>], result[<span class="string">&#x27;expires_in&#x27;</span>]))</span><br><span class="line">        <span class="keyword">return</span> result[<span class="string">&#x27;access_token&#x27;</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> DemoError(<span class="string">&#x27;MAYBE API_KEY or SECRET_KEY not correct: access_token or scope not found in token response&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;  TOKEN end &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    token = fetch_token()</span><br><span class="line"></span><br><span class="line">    speech_data = []</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(AUDIO_FILE, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> speech_file:</span><br><span class="line">        speech_data = speech_file.read()</span><br><span class="line"></span><br><span class="line">    length = <span class="built_in">len</span>(speech_data)</span><br><span class="line">    <span class="keyword">if</span> length == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> DemoError(<span class="string">&#x27;file %s length read 0 bytes&#x27;</span> % AUDIO_FILE)</span><br><span class="line">    speech = base64.b64encode(speech_data)</span><br><span class="line">    <span class="keyword">if</span> (IS_PY3):</span><br><span class="line">        speech = <span class="built_in">str</span>(speech, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    params = &#123;<span class="string">&#x27;dev_pid&#x27;</span>: DEV_PID,</span><br><span class="line">             <span class="comment">#&quot;lm_id&quot; : LM_ID,    #测试自训练平台开启此项</span></span><br><span class="line">              <span class="string">&#x27;format&#x27;</span>: FORMAT,</span><br><span class="line">              <span class="string">&#x27;rate&#x27;</span>: RATE,</span><br><span class="line">              <span class="string">&#x27;token&#x27;</span>: token,</span><br><span class="line">              <span class="string">&#x27;cuid&#x27;</span>: CUID,</span><br><span class="line">              <span class="string">&#x27;channel&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">              <span class="string">&#x27;speech&#x27;</span>: speech,</span><br><span class="line">              <span class="string">&#x27;len&#x27;</span>: length</span><br><span class="line">              &#125;</span><br><span class="line">    post_data = json.dumps(params, sort_keys=<span class="literal">False</span>)</span><br><span class="line">    <span class="comment"># print post_data</span></span><br><span class="line">    req = Request(ASR_URL, post_data.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">    req.add_header(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        begin = timer()</span><br><span class="line">        f = urlopen(req)</span><br><span class="line">        result_str = f.read()</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;Request time cost %f&quot;</span> % (timer() - begin))</span><br><span class="line">    <span class="keyword">except</span> URLError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;asr http response http code : &#x27;</span> + <span class="built_in">str</span>(err.code))</span><br><span class="line">        result_str = err.read()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (IS_PY3):</span><br><span class="line">        result_str = <span class="built_in">str</span>(result_str, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(result_str)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;result.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> of:</span><br><span class="line">        of.write(result_str)</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;access_token&quot;:&quot;24.ffc8666eb9b9ed1f831f145674c84faa.2592000.1585487697.282335-17692619&quot;,&quot;session_key&quot;:&quot;9mzdXRJMRXk2UGrRPfHouFivZjF9k3jZeeV1UQgxHVgF4LJMNALSRd47wm5rIqFiV4cm7Se8QQtwa14APh8FHjSdTtIlGw==&quot;,&quot;scope&quot;:&quot;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_ocr_general_basic brain_all_scope picchain_test_picchain_api_scope </span><br><span class="line">brain_nlp_emotion wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test\u6743\u9650 vis-classify_flower lpq_\u5f00\u653e cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi fake_face_detect_\u5f00\u653eScope vis-ocr_\u865a\u62df\u4eba\u7269\u52a9\u7406 idl-video_\u865a\u62df\u4eba\u7269\u52a9\u7406&quot;,&quot;refresh_token&quot;:&quot;25.64693b95dc93605948c806dba37e0352.315360000.1898255697.282335-17692619&quot;,&quot;session_secret&quot;:&quot;07709d0831bf5be4a872a695e2b947f1&quot;,&quot;expires_in&quot;:2592000&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#x27;access_token&#x27;: &#x27;24.ffc8666eb9b9ed1f831f145674c84faa.2592000.1585487697.282335-17692619&#x27;, &#x27;session_key&#x27;: &#x27;9mzdXRJMRXk2UGrRPfHouFivZjF9k3jZeeV1UQgxHVgF4LJMNALSRd47wm5rIqFiV4cm7Se8QQtwa14APh8FHjSdTtIlGw==&#x27;, &#x27;scope&#x27;: &#x27;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_ocr_general_basic brain_all_scope picchain_test_picchain_api_scope brain_nlp_emotion wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian </span><br><span class="line">ocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi fake_face_detect_开放Scope vis-ocr_虚拟人物助理 idl-video_虚拟人物助理&#x27;, &#x27;refresh_token&#x27;: &#x27;25.64693b95dc93605948c806dba37e0352.315360000.1898255697.282335-17692619&#x27;, &#x27;session_secret&#x27;: &#x27;07709d0831bf5be4a872a695e2b947f1&#x27;, &#x27;expires_in&#x27;: 2592000&#125;</span><br><span class="line">audio_voice_assistant_get</span><br><span class="line">SUCCESS WITH TOKEN: 24.ffc8666eb9b9ed1f831f145674c84faa.2592000.1585487697.282335-17692619  EXPIRES IN SECONDS: 2592000</span><br><span class="line">Request time cost 2.540582</span><br><span class="line">&#123;&quot;err_msg&quot;:&quot;speech quality error.&quot;,&quot;err_no&quot;:3301,&quot;sn&quot;:&quot;470283300881582895698&quot;&#125;</span><br><span class="line"></span><br><span class="line">PS D:\learn Java\pyday\API\API\语音识别&gt; python baidushibie.py</span><br><span class="line">&#123;&quot;access_token&quot;:&quot;24.cb226321d87cd64da657bd1468e81951.2592000.1585489514.282335-17692619&quot;,&quot;session_key&quot;:&quot;9mzdWBIklEgpIJj0BuuHGod5VXLJr4CDLIGupFzOvb\/znpW6oOHCjSlGx9i4JVWo+OjdIiF1icrbhTLDJ08AcHljft4f1g==&quot;,&quot;scope&quot;:&quot;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_ocr_general_basic brain_all_scope picchain_test_picchain_api_scope brain_nlp_emotion wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test\u6743\u9650 vis-classify_flower lpq_\u5f00\u653e cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi fake_face_detect_\u5f00\u653eScope vis-ocr_\u865a\u62df\u4eba\u7269\u52a9\u7406 idl-video_\u865a\u62df\u4eba\u7269\u52a9\u7406&quot;,&quot;refresh_token&quot;:&quot;25.25ba3b367690eec58c9d79507de4a615.315360000.1898257514.282335-17692619&quot;,&quot;session_secret&quot;:&quot;3f2930ef60146626a1bd70cb87cbfd8c&quot;,&quot;expires_in&quot;:2592000&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#x27;access_token&#x27;: &#x27;24.cb226321d87cd64da657bd1468e81951.2592000.1585489514.282335-17692619&#x27;, &#x27;session_key&#x27;: &#x27;9mzdWBIklEgpIJj0BuuHGod5VXLJr4CDLIGupFzOvb/znpW6oOHCjSlGx9i4JVWo+OjdIiF1icrbhTLDJ08AcHljft4f1g==&#x27;, &#x27;scope&#x27;: &#x27;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_ocr_general_basic brain_all_scope picchain_test_picchain_api_scope brain_nlp_emotion wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian </span><br><span class="line">ApsMisTest_Test权限 vis-classify_flower lpq_开放 cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi fake_face_detect_开放Scope vis-ocr_虚拟人物助理 idl-video_虚拟人物助理&#x27;, &#x27;refresh_token&#x27;: &#x27;25.25ba3b367690eec58c9d79507de4a615.315360000.1898257514.282335-17692619&#x27;, &#x27;session_secret&#x27;: &#x27;3f2930ef60146626a1bd70cb87cbfd8c&#x27;, &#x27;expires_in&#x27;: 2592000&#125;</span><br><span class="line">audio_voice_assistant_get</span><br><span class="line">SUCCESS WITH TOKEN: 24.cb226321d87cd64da657bd1468e81951.2592000.1585489514.282335-17692619  EXPIRES IN SECONDS: 2592000</span><br><span class="line">Request time cost 1.507672</span><br><span class="line">&#123;&quot;corpus_no&quot;:&quot;6798493061260544840&quot;,&quot;err_msg&quot;:&quot;success.&quot;,&quot;err_no&quot;:0,&quot;result&quot;:[&quot;百度是瓜皮。&quot;],&quot;sn&quot;:&quot;666502245331582897515&quot;&#125;</span><br></pre></td></tr></table></figure>
-<p>显然输出在最后一行。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>韦老师了一个图特别好。<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/oDSn0A"><img src="https://s4.ax1x.com/2021/12/05/oDSn0A.md.png" alt="oDSn0A.md.png"></a></p>
+<p>哈哈哈被魏老师喷了一下 目前嵌入式业界的形式确实是从厂商基本不提供到厂商能提供一个完整的SDK的转变。高级的驱动很少有人能讲清楚，体系非常复杂，很少有人能讲清楚，很多时候都是一笔带过，配置一下应用层工具就完事了。这些高级的驱动工作中需要专门的人来负责，非常专业。他们是某一块的专家，比如摄像头专家音频专家。只要不是成为某一个方面的专家那就成为一个全栈工程师吧</p>
+<h1 id="gcc详细配置"><a href="#gcc详细配置" class="headerlink" title="gcc详细配置"></a>gcc详细配置</h1><h2 id="制作使用动态库"><a href="#制作使用动态库" class="headerlink" title="制作使用动态库"></a>制作使用动态库</h2><p>gcc -c 编译成.o 文件<br>gcc -shared 编译成.so 文件<br>gcc -lxxx 连接动态库文件</p>
+<ul>
+<li>-Wall 基本打开了所有主义的告警信息</li>
+</ul>
 
       
 
@@ -324,7 +247,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">API</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">knowledge</a>
         		</li>
       		
 		</ul>
@@ -380,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://jie2311260561.github.io/2021/09/10/Develop_record/2020-2-28-Baidu/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://jie2311260561.github.io/2021/12/05/Basis_knowledge/embedded_for_%E9%9F%A6%E4%B8%9C%E5%B1%B1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -394,18 +317,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/10/Allwinner_internship/2021-5-27-allwinnerSDK/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          全志科技D1哪吒SDk 下载编译使用及收获
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/09/09/Basis_knowledge/2021-9-8-tongpeifu/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用了通配符设置简单了，小有心得</div>
+    <a href="/2021/12/03/Develop_record/git_lfs_error/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git下载大文件找不到指令</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -679,7 +593,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">播放视频的流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">knowledge</a>
               </li>
             
             <div class="clearfix"></div>
