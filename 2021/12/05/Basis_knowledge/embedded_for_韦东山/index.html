@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/05/oDSn0A.md.png">
 <meta property="article:published_time" content="2021-12-05T07:23:16.000Z">
-<meta property="article:modified_time" content="2021-12-05T10:29:46.462Z">
+<meta property="article:modified_time" content="2021-12-06T15:44:52.908Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="knowledge">
 <meta name="twitter:card" content="summary">
@@ -202,7 +202,15 @@
 <h1 id="gcc详细配置"><a href="#gcc详细配置" class="headerlink" title="gcc详细配置"></a>gcc详细配置</h1><h2 id="制作使用动态库"><a href="#制作使用动态库" class="headerlink" title="制作使用动态库"></a>制作使用动态库</h2><p>gcc -c 编译成.o 文件<br>gcc -shared 编译成.so 文件<br>gcc -lxxx 连接动态库文件</p>
 <ul>
 <li>-Wall 基本打开了所有主义的告警信息</li>
+<li>-O O1 减少编译开销，从原程序中精确的获取到你所期待的结果</li>
+<li>-O2 多优化一些 不进行循环展开和函数内嵌</li>
+<li>-nostdlib 不链接系统标准启动文件和便准库文件，只把指定的文件传给链接器，长用于编译内核，bootload等程序，他们不需要启动文件，标准库文件。</li>
+<li>-Xlinker option 把选项传递给链接器</li>
+<li>-Wl option 把选项传递给连接起</li>
+<li>-u symbol 链接器认为取消了symbol的符号定义。</li>
 </ul>
+<p>Makefile 有延时变量和立即变量两种变量<br>直接赋值  ?=  延时变量  只有第一次定义是赋值才成功，如果曾定义过赋值无效<br>:= 立即变量<br>+= 变量类型不变</p>
+<p>延时变量在使用的时候才展开  立即变量使用推到则为空。</p>
 
       
 
