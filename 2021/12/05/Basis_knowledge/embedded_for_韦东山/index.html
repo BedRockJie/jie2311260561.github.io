@@ -16,8 +16,10 @@
 <meta property="og:description" content="下载hormany_xr806过程中遇到的异常">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/05/oDSn0A.md.png">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/08/oRq06f.png">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/08/oRObS1.png">
 <meta property="article:published_time" content="2021-12-05T07:23:16.000Z">
-<meta property="article:modified_time" content="2021-12-06T15:44:52.908Z">
+<meta property="article:modified_time" content="2021-12-08T12:29:38.030Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="knowledge">
 <meta name="twitter:card" content="summary">
@@ -210,7 +212,34 @@
 <li>-u symbol 链接器认为取消了symbol的符号定义。</li>
 </ul>
 <p>Makefile 有延时变量和立即变量两种变量<br>直接赋值  ?=  延时变量  只有第一次定义是赋值才成功，如果曾定义过赋值无效<br>:= 立即变量<br>+= 变量类型不变</p>
-<p>延时变量在使用的时候才展开  立即变量使用推到则为空。</p>
+<p>延时变量在使用的时候才展开  立即变量使用推到则为空。<br>函数<br>$(foreach var,list,text)<br>对list中的每一个元素，取出来赋给var，然后把var改为text所描述的形式。</p>
+<p>$(wildcard pattern)<br>pattern所列出的文件是否存在，把存在的文件都列出来。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src_files := $( wildcard  *.c)  // 最终 src_files中列出了当前目录下的所有.c文件</span><br></pre></td></tr></table></figure>
+<p>$(filter pattern…,text)<br>把text中符合pattern格式的内容，filter(过滤)出来、留下来。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj-y := a.o b.o c/ d/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$(filter-out pattern…,text)<br>把text中符合pattern格式的内容，filter-out(过滤)出来、扔掉</p>
+<p>$(patsubst pattern,replacement,text)<br>寻找<code>text</code>中符合格式<code>pattern</code>字，用<code>replacement</code>替换它们。<code>pattern</code>和<code>replacement</code>中可以使用通配符。</p>
+<p>通用Makefile的设计思想<br>A. 在Makefile文件中确定要编译的文件、目录<br>“Makefile”文件总是被“Makefile.build”包含的。<br>B. 在Makefile.build中设置编译规则，有3条编译规则</p>
+<ul>
+<li>怎么编译子目录？ 进入子目录编译</li>
+<li>怎么编译当前目录中的文件</li>
+<li>当前目录下的.o和子目录下的built-in.o要打包起来<br>C. 顶层Makefile中把顶层目录的built-in.o链接成APP</li>
+</ul>
+<h1 id="Framebuffer"><a href="#Framebuffer" class="headerlink" title="Framebuffer"></a>Framebuffer</h1><p>Linux中使用Framebuffer来控制LCD，帧缓冲的意思，假设LCD是1024<em>768 每个像素用32位色表示，那么buffer的大小就是1024</em>768*32、8=3145728字节。<br>简单介绍LCD操作原理：</p>
+<ul>
+<li>驱动程序设置好LCD控制器：<ul>
+<li>根据LCD的参数设置LCD控制器的时序、信号极性；</li>
+<li>根据LCD分辨率、BPP分配Framebuffer。</li>
+</ul>
+</li>
+<li>app使用ioctl获得LCD分辨率，BPP</li>
+<li>app通过mmap映射framebuffer，向framebuffer写入数据。</li>
+</ul>
+<p>可以用以下公式计算出(x,y)坐标的对应的framebuffer的地址。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(x，y)像素起始地址=fb_base+(xres*bpp/8)*y + x*bpp/8</span><br></pre></td></tr></table></figure>
+<p>最后一个解决的问题是RGB怎么表示。<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/oRq06f"><img src="https://s4.ax1x.com/2021/12/08/oRq06f.png" alt="oRq06f.png"></a><br>韦老师的图。。。<br>对于32BPP，一般只设置其中的低24位，高8位表示透明度，一般的LCD都不支持。</p>
+<h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><p>file_operations 结构体定义如下：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/oRObS1"><img src="https://s4.ax1x.com/2021/12/08/oRObS1.png" alt="oRObS1.png"></a></p>
+<p>① 确定主设备号，也可以让内核分配<br>② 定义自己的file_operations结构体<br>③ 实现对应的drv_open/drv_read/drv_write等函数，填入file_operations结构体<br>④ 把file_operations结构体告诉内核：register_chrdev<br>⑤ 谁来注册驱动程序啊？得有一个入口函数：安装驱动程序时，就会去调用这个入口函数<br>⑥ 有入口函数就应该有出口函数：卸载驱动程序时，出口函数调用unregister_chrdev<br>⑦ 其他完善：提供设备信息，自动创建设备节点：class_create, device_create</p>
 
       
 
