@@ -16,7 +16,7 @@
 <meta property="og:description" content="查看roclchip例程中的mpp程序">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-18T12:24:56.000Z">
-<meta property="article:modified_time" content="2021-12-19T10:35:12.502Z">
+<meta property="article:modified_time" content="2021-12-28T10:28:36.454Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="RockChip">
 <meta name="twitter:card" content="summary">
@@ -196,6 +196,7 @@
         <!-- more -->
 
 <h1 id="1-查看readme"><a href="#1-查看readme" class="headerlink" title="1.查看readme"></a>1.查看readme</h1><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>Media Process Platform 多媒体处理平台<br>Media Process Interface 媒体处理接口<br>Hardware Abstract Layer 硬件抽象层<br>Operation System Abstract Layer 操作系统抽象层</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|----- osal                   Operation System Abstract Layer: abstract layer</span><br><span class="line">|  |                          for different operation system</span><br><span class="line">|----- tools                  coding style format tools</span><br><span class="line">|----- utils                  small util functions</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="中的程序"><a href="#中的程序" class="headerlink" title="中的程序"></a>中的程序</h2><ol>
 <li>mpi_enc_test 使用同步接口(轮询、出队列和入队列)编码原始yuv压缩视频。</li>
 <li>mpi_dec_test 使用同步接口解码压缩视频为yuv</li>

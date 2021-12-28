@@ -16,7 +16,7 @@
 <meta property="og:description" content="安装RockChip工具到个人PC">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-20T13:12:49.000Z">
-<meta property="article:modified_time" content="2021-12-21T13:46:34.966Z">
+<meta property="article:modified_time" content="2021-12-28T09:41:14.239Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
@@ -213,6 +213,9 @@
 <p>CMDLINE 属性是我们关注的地方，以 uboot 为例， 0x00002000@0x00004000(uboot) 中 0x00004000 为uboot 分区的起始位置，0x00002000 为分区的大小，以此类推。</p>
 <h1 id="package-file"><a href="#package-file" class="headerlink" title="package-file"></a>package-file</h1><p>package-file 文件用于打包固件时确定需要的分区镜像和镜像路径，同时它需要与 parameter.txt 文件保持一致。<br>路径：<code>tools/linux/Linux_Pack_Firmware/rockdev/rk356x-package-file</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package-file    package-file</span><br><span class="line">bootloader      Image/MiniLoaderAll.bin</span><br><span class="line">parameter       Image/parameter.txt</span><br><span class="line">uboot           Image/uboot.img</span><br><span class="line">misc            Image/misc.img</span><br><span class="line">boot            Image/boot.img</span><br><span class="line">recovery        Image/recovery.img</span><br><span class="line">rootfs          Image/rootfs.img</span><br><span class="line">oem             Image/oem.img</span><br><span class="line">userdata        Image/userdata.img</span><br><span class="line">backup          RESERVED</span><br></pre></td></tr></table></figure>
+
+<h1 id="关闭LED灯"><a href="#关闭LED灯" class="headerlink" title="关闭LED灯"></a>关闭LED灯</h1><p>/sys/devices/platform/leds/leds/firefly:blue:power</p>
+
       
 
       

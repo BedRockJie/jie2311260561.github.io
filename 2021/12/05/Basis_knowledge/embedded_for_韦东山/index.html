@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/08/oRq06f.png">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/08/oRObS1.png">
 <meta property="article:published_time" content="2021-12-05T07:23:16.000Z">
-<meta property="article:modified_time" content="2021-12-15T14:34:02.991Z">
+<meta property="article:modified_time" content="2021-12-22T15:45:54.555Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="knowledge">
 <meta name="twitter:card" content="summary">
@@ -242,6 +242,11 @@
 <p>① 确定主设备号，也可以让内核分配<br>② 定义自己的file_operations结构体<br>③ 实现对应的drv_open/drv_read/drv_write等函数，填入file_operations结构体<br>④ 把file_operations结构体告诉内核：register_chrdev<br>⑤ 谁来注册驱动程序啊？得有一个入口函数：安装驱动程序时，就会去调用这个入口函数<br>⑥ 有入口函数就应该有出口函数：卸载驱动程序时，出口函数调用unregister_chrdev<br>⑦ 其他完善：提供设备信息，自动创建设备节点：class_create, device_create</p>
 <p>离线语音识别库<br>R329语音识别 视频教程, 从编译到部署,完全可用<br>R329语音识别之前发布了一个简单版本, 今天终于出了一个详细的版本, 可以自行在 R329上实现编译<br>获取到语音识别的结果用于其他的DIY项目<br>手把手教会如何编译, 以及在哪修改源码更改功能</p>
 <p>视频地址: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rq4y1B7WH?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1Rq4y1B7WH?spm_id_from=333.999.0.0</a><br>项目地址: <a target="_blank" rel="noopener" href="https://github.com/7758258abc/r329_speed">https://github.com/7758258abc/r329_speed</a><br>下载Maix-Speech-master的地址: <a target="_blank" rel="noopener" href="https://github.com/sipeed/Maix-Speech">https://github.com/sipeed/Maix-Speech</a></p>
+<p>1、列出当前目录的文件、文件夹完整路径<br>   ls -1 |awk ‘{print i$0}’ i=<code>pwd</code>‘/‘</p>
+<p>2、列出当前目录及子目录的文件、文件夹完整路径<br>   ls -R |awk ‘{print i$0}’ i=<code>pwd</code>‘/‘</p>
+<p>2b） 列出当前目录及子目录下的文件夹完整路径<br>    ls -FR | grep /|sed”s::‘pwd‘/:”3、用find实现，好像运行要慢些find/−name”∗.∗”−execls4、递归列出当前目录及子目录名称ls−FR|grep/</p>
+<p>5、递归列出当前目录及子目录名称，包括相关属性<br>    ls -lR | grep “^d”<br>    # drwxr-xr-x 3 idea idea  4096 Aug  2  2009 images</p>
+<p>6、只列出当前目录下的子目录<br>    用ls只列出子目录<br>    ls -d */</p>
 
       
 
