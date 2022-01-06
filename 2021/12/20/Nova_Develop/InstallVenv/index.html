@@ -16,7 +16,7 @@
 <meta property="og:description" content="安装RockChip工具到个人PC">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-20T13:12:49.000Z">
-<meta property="article:modified_time" content="2021-12-28T09:41:14.239Z">
+<meta property="article:modified_time" content="2022-01-06T05:54:24.685Z">
 <meta property="article:author" content="BedRock_Jie">
 <meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,15 @@
 <h1 id="package-file"><a href="#package-file" class="headerlink" title="package-file"></a>package-file</h1><p>package-file 文件用于打包固件时确定需要的分区镜像和镜像路径，同时它需要与 parameter.txt 文件保持一致。<br>路径：<code>tools/linux/Linux_Pack_Firmware/rockdev/rk356x-package-file</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package-file    package-file</span><br><span class="line">bootloader      Image/MiniLoaderAll.bin</span><br><span class="line">parameter       Image/parameter.txt</span><br><span class="line">uboot           Image/uboot.img</span><br><span class="line">misc            Image/misc.img</span><br><span class="line">boot            Image/boot.img</span><br><span class="line">recovery        Image/recovery.img</span><br><span class="line">rootfs          Image/rootfs.img</span><br><span class="line">oem             Image/oem.img</span><br><span class="line">userdata        Image/userdata.img</span><br><span class="line">backup          RESERVED</span><br></pre></td></tr></table></figure>
 
-<h1 id="关闭LED灯"><a href="#关闭LED灯" class="headerlink" title="关闭LED灯"></a>关闭LED灯</h1><p>/sys/devices/platform/leds/leds/firefly:blue:power</p>
+<h1 id="关闭LED灯"><a href="#关闭LED灯" class="headerlink" title="关闭LED灯"></a>关闭LED灯</h1><p>echo 0 &gt; /sys/devices/platform/leds/leds/firefly:blue:power/brightness</p>
+<h1 id="开启NFS服务"><a href="#开启NFS服务" class="headerlink" title="开启NFS服务"></a>开启NFS服务</h1><p>进入 <code>menuconfig</code> 打开<code>nfs-utils</code>，同时他会自动勾上对应依赖包！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">meke menuconfig</span><br><span class="line">make -j8</span><br><span class="line">./mkfirmware.sh</span><br><span class="line">./build.sh updateimg</span><br></pre></td></tr></table></figure>
+<p>然后重新烧录</p>
+<h1 id="添加开机启动脚本"><a href="#添加开机启动脚本" class="headerlink" title="添加开机启动脚本"></a>添加开机启动脚本</h1><ol>
+<li>添加命令 /etc/rc.local</li>
+<li>添加脚本 自己写一个脚本放到/etc/profile.d/ 系统会自动执行目录下的所有脚本</li>
+<li>添加服务 /etc/init.d/srs.sh </li>
+</ol>
 
       
 
@@ -399,7 +407,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 BedRock_Jie
+    		&copy; 2022 BedRock_Jie
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
